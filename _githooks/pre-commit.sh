@@ -1,3 +1,6 @@
 #!/bin/sh
 
-pip3 freeze > ./../requirements.txt
+source .venv/bin/activate
+pip3 freeze > requirements.txt
+git add requirements.txt
+deactivate
