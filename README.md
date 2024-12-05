@@ -16,6 +16,12 @@ To automate things somewhat, I've also added a pre-commit script that will autom
 
 Personal thoughts and comments based on the outcome of my solution. Ordered in reverse chronological order!
 
+### Day 5
+
+A return to numerical problems! This one took me way longer than it should because I misread how the order of pages should be applied. I was originally tracking each individual state as "valid" or not, but the actual reality was I just needed to enforce against the set of numbers I already had in the list and not literally all the rules. Once I got that, both problems went pretty quickly. The second half being a negation of the first was a nice twist as well - adapting the first part was quite literally just flipping a couple boolean checks around and adding the swap logic.
+
+Another quirk, I found it easier to read in two separate files for the enforcement order, and the lists to validate.
+
 ### Day 4
 
 A friend of mine committed to doing all the solutions in C... now I have no choice `:)`. I've previously tinkered with word search problems, but this was the first time I really put that search skill to the test. At first I wrote three different functions to search (horizontal, vertical, diagonal), but then I realized it might be easier to have a single function do every direction. That's ultimately what I landed on, albeit with a bit of tinkering and an unnecessarily long function call...
