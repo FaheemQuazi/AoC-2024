@@ -16,6 +16,12 @@ To automate things somewhat, I've also added a pre-commit script that will autom
 
 Personal thoughts and comments based on the outcome of my solution. Ordered in reverse chronological order!
 
+### Day 4
+
+A friend of mine committed to doing all the solutions in C... now I have no choice `:)`. I've previously tinkered with word search problems, but this was the first time I really put that search skill to the test. At first I wrote three different functions to search (horizontal, vertical, diagonal), but then I realized it might be easier to have a single function do every direction. That's ultimately what I landed on, albeit with a bit of tinkering and an unnecessarily long function call...
+
+Part 2 was a little easier. Was essentially convolution but with text instead of an image. I just needed to figure out what all the enumerations of the `X-MAS` pattern was and... bam!
+
 
 ### Day 3
 
