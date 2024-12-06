@@ -16,6 +16,12 @@ To automate things somewhat, I've also added a pre-commit script that will autom
 
 Personal thoughts and comments based on the outcome of my solution. Ordered in reverse chronological order!
 
+### Day 6
+
+Absolutely _flew_ through part 1. Love Mazes! Part two though.... No idea why my solution isn't providing a correct result. I even wrote a print utility so I could visualize the whole thing and see the loops, and... nope. Can't find the corner case or missing cases. I thought maybe I had an "off-by-one" error because of the way I was counting obstacles, but that turned out to be someone else's answer!
+
+`-1 star :(`
+
 ### Day 5
 
 A return to numerical problems! This one took me way longer than it should because I misread how the order of pages should be applied. I was originally tracking each individual state as "valid" or not, but the actual reality was I just needed to enforce against the set of numbers I already had in the list and not literally all the rules. Once I got that, both problems went pretty quickly. The second half being a negation of the first was a nice twist as well - adapting the first part was quite literally just flipping a couple boolean checks around and adding the swap logic.
