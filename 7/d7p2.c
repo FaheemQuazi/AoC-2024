@@ -3,7 +3,18 @@
 #include "stdlib.h"
 #include "string.h"
 #include "math.h"
+#include <stdio.h>
 #define MAX_TBL_SIZE 900
+
+int getB3Bit(int c, int i) {
+    char x[128];
+    int y = 0;
+    while (c > 0) {
+        x[y++] = c % 3;
+        c = c / 3;
+    }
+    return x[i];
+}
 
 int main() {
     FILE* f = fopen("input.txt", "r");
@@ -25,17 +36,23 @@ int main() {
         }
     } while (!feof(f));
     rc -= 1;
-    printf("ROWS %d\n", rc);
 
     unsigned long goodvals = 0;
     for (int r = 0; r < rc; r++) {
         bool cleared = false;
-        for (int c = 0; c < pow(2, table[r][1]-1); c++) { // combinations
+        for (int c = 0; c < pow(3, table[r][1]-1); c++) { // combinations
             unsigned long total = table[r][2];
             for (unsigned int s = 0; s < table[r][1]-1; s++) {
-                bool b = ((c & (1 << s)) >> s) & 1;
-                if (b) total = total * table[r][s+3];
-                else total = total + table[r][s+3];
+                int b = getB3Bit(c, s);
+                if (b == 2) {
+                    char concat[128];
+                    sprintf(concat, "%lu%lu", total, table[r][s+3]);
+                    sscanf(concat, "%lu", &total);
+                } else if (b == 1) { 
+                    total = total * table[r][s+3];
+                } else { 
+                    total = total + table[r][s+3];
+                }
             }
             if (total == table[r][0]) {
                 cleared = true;

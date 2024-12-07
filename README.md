@@ -16,6 +16,15 @@ To automate things somewhat, I've also added a pre-commit script that will autom
 
 Personal thoughts and comments based on the outcome of my solution. Ordered in reverse chronological order!
 
+### Day 7
+
+Back on track! Did both a bit later in the night. A nice combinatorics problem. I decided to experiment with optimizaton levels to try and see if that made any differences with runtime. `-O3` created a problem with my base-3 decoder! I'm not 100% sure _why_ it did, but I was seeing it return weird results when `-O3` was on. The test case would still pass because the error would happen at a position where it normally would already fail the test (so it didn't change the overall outcome). 
+
+Staying under 100 lines of code is the new challenge.
+
+Note for the future: Optimize code so you don't have to use `-O` flag.
+
+
 ### Day 6
 
 Absolutely _flew_ through part 1. Love Mazes! Part two though.... No idea why my solution isn't providing a correct result. I even wrote a print utility so I could visualize the whole thing and see the loops, and... nope. Can't find the corner case or missing cases. I thought maybe I had an "off-by-one" error because of the way I was counting obstacles, but that turned out to be someone else's answer!
